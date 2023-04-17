@@ -144,8 +144,8 @@ a {
 }
 
 .visual_main div a img:hover {
-  border: 3px solid rgb(156, 133, 91);
   box-sizing: border-box;
+scale: 1.1;
 }
 
 .slick-dots {
@@ -177,6 +177,7 @@ a {
 
 .slick-dots li :hover {
   background-color: rgb(150, 199, 176);
+  scale: 1.1;
 }
 
 .visual_main_ex {
@@ -189,7 +190,12 @@ a {
   top: 45%;
   transform: translateY(-50%);
 }
-
+.visual_main_ex .arrow .prevArrow:hover,
+.visual_main_ex .arrow .nextArrow:hover
+{  scale: 1.1;
+background-color: rgb(150, 199, 176);
+border-radius: 5px;
+}
 .visual_main_ex .arrow .nextArrow {
   position: absolute;
   right: 0;
@@ -982,7 +988,7 @@ a {
 
   .lnb_ham_menu {
     position: absolute;
-    top: 60px;
+    top: 61px;
     left: 0;
     width: 100%;
     height: 500px;
@@ -1223,4 +1229,11 @@ a {
   .footer_ex .wrap .footer .footer_top .footer_top_right li:last-child {
     border-right: none;
   }
+}
+@media (max-width: 425px){
+ .lnb ul li img{display: none;}
+ .header_ex .wrap .logo{
+  width: 50%;
+ }.header_ex .wrap .logo a{display: block;
+line-height: 77px;}
 }
