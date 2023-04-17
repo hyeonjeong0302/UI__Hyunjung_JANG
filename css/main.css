@@ -1044,10 +1044,10 @@ a {
   .search_lnb input {
     width: calc(100% * 4 / 0.7);
     height: 50px;
-    line-height: 80px;
+    /* line-height: 80px; */
     border-radius: 10px;
-    margin-right: 30px;
-    margin-left: 30px;
+    /* margin-right: 30px; */
+    /* margin-left: 30px; */
   }
 
   .search_lnb input a {
@@ -1056,7 +1056,7 @@ a {
   .search_lnb a i {
     text-align: center;
     line-height: 80px;
-    font-size: 55px;
+    /* font-size: 55px; */
     height: 80px;
     display: block;
     font-weight: 900;
