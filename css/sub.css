@@ -158,7 +158,7 @@ a {
 
 .title h1 {
   overflow: hidden;
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* top category */
@@ -973,7 +973,6 @@ a {
   .logo a img {
     width: 100%;
   }
-
   .category .product {
     width: calc((100% - 30px) / 3);
     margin-right: 0;
@@ -994,7 +993,6 @@ a {
 
   .footer_ex .wrap .footer .footer_top .footer_top_right {
     width: 100%;
-    /* display: flex; */
   }
 
   .footer_ex .wrap .footer .footer_top .footer_top_right ul {

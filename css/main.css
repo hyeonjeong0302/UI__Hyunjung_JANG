@@ -1114,7 +1114,9 @@ a {
   .visual_main_ex .arrow .nextArrow i {
     font-size: 50px;
   }
-
+  .category h1{
+    font-size: 20px;
+  }
   .category .category_image {
     display: none;
   }
@@ -1145,7 +1147,9 @@ a {
     float: left;
     margin-right: 15px;
   }
-
+  .personal_color h1{
+    font-size: 20px;
+  }
   .personal_color .personal_mobile>div:last-child {
     margin-right: 0;
   }
