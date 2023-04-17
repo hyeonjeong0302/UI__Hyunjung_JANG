@@ -1036,11 +1036,6 @@ a {
     margin-left: 10px;
   }
 
-  .search_lnb input a {
-
-    /* width: calc(100% * 4 /3.3); */
-
-  }
 
   .search_lnb a i {    
     position: absolute;
