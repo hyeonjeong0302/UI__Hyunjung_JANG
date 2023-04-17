@@ -1012,8 +1012,26 @@ a {
 }
 
 @media (max-width: 425px) {
-  .lnb ul li img {
-    display: none;
+
+  .lnb_menu_new img {
+    position: absolute;
+    height: 55px;
+    top: 0;
+    left: 40px;
+  }
+
+  .lnb_menu_accessories img {
+    position: absolute;
+    height: 55px;
+    top: 0;
+    right: 0px;
+  }
+
+  .lnb_menu_sale img {
+    position: absolute;
+    height: 50px;
+    top: 6px;
+    left: 20px;
   }
 
   .header_ex .wrap .logo {
