@@ -1210,6 +1210,11 @@ a {
   }
 }
 
+@media (max-width: 559px){
+  .term{
+    bottom: 100px;
+  }
+}
 @media (max-width: 425px) {
 
   .lnb_menu_new img {

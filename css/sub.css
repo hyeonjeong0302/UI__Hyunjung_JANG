@@ -591,12 +591,11 @@ a {
 
 /* mediaquery */
 /* tablet */
+
 @media (max-width: 1268px) {
 
   a { color: black; text-decoration: none; }
-  @media (hover: hover) {
-    a:hover { color: black; text-decoration: underline; }
-  }
+
 
   .wrap {
     width: 100%;
@@ -1016,7 +1015,11 @@ a {
     border-right: none;
   }
 }
-
+@media (max-width: 559px){
+  .term{
+    bottom: 100px;
+  }
+}
 @media (max-width: 425px) {
 
   .lnb_menu_new img {
