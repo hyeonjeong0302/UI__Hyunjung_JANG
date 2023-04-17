@@ -592,6 +592,12 @@ a {
 /* mediaquery */
 /* tablet */
 @media (max-width: 1268px) {
+
+  a { color: black; text-decoration: none; }
+  @media (hover: hover) {
+    a:hover { color: black; text-decoration: underline; }
+  }
+
   .wrap {
     width: 100%;
   }
