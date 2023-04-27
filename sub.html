@@ -8,8 +8,15 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="./css/sub.css" />
   <title>MAISON KITSUNE</title>
+
+  <!-- js -->
+  <script src="./js/jquery-3.6.4.min.js"></script>
+  <script src="./js/jquery.scrollTo.min.js"></script>
+  <script src="./js/jQuery_fixed.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+
 </head>
 
 <body>
@@ -42,7 +49,12 @@
       <div class="lnb">
         <input type="checkbox" id="lnb_chk" checked />
         <div class="label">
-          <label for="lnb_chk" class="open_lnb"><img src="./images/ham.jpg" alt=""></label>
+          <label for="lnb_chk" class="open_lnb"><div class="three col">
+            <div class="hamburger" id="hamburger-5">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div></div></label>
         </div>
         <ul class="lnb_ham_menu">
           <div class="lnb_menu_top">
@@ -80,7 +92,7 @@
 
   </header>
   <!--header_ex-->
-  <!--header_ex-->
+
   <div class="wrap">
     <div class="route">
       <a href="./index.html">
@@ -921,7 +933,7 @@
     </div>
     <!--pagination-->
     <div class="top_btn">
-      <a href="#"><img src="./images/top_btn.png" alt="top_btn" /></a>
+      <a href="#header"><img src="./images/top_btn.png" alt="top_btn" /></a>
     </div>
     <!--top_btn-->
   </div>
@@ -1040,6 +1052,7 @@
   <!--footer_ex-->
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <!-- slick start -->
   <script>
     $(document).ready(function () {
       $(".visual_main").slick({
@@ -1051,6 +1064,31 @@
       });
     });
   </script>
+  <!-- slick end -->
+
+  <!-- top_btn start -->
+  <script>
+    $(function () {
+
+      $('.top_btn').click(function (e) {
+        e.preventDefault()
+        $('html, body').stop().animate({
+          scrollTop: 0
+        }, 1000)
+      })
+    })
+  </script>
+  <!-- top_btn end -->
+
+    <!--ham_btn start-->
+    <script>
+      $(document).ready(function () {
+        $(".hamburger").click(function () {
+          $(this).toggleClass("is-active");
+        });
+      });
+    </script>
+    <!--ham_btn end-->
 </body>
 
 </html>

@@ -8,6 +8,12 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="./css/main.css" />
   <title>MAISON KITSUNE</title>
+
+  <!-- js -->
+  <script src="./js/jquery-3.6.4.min.js"></script>
+  <script src="./js/jquery.scrollTo.min.js"></script>
+  <script src="./js/jQuery_fixed.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
 </head>
@@ -29,6 +35,7 @@
         </ul>
       </div>
       <!--gnb-->
+
       <div class="header_right">
         <div class="cart">
           <a href="#"><i class="fas fa-shopping-cart"></i></a>
@@ -43,7 +50,12 @@
       <div class="lnb">
         <input type="checkbox" id="lnb_chk" checked />
         <div class="label">
-          <label for="lnb_chk" class="open_lnb"><img src="./images/ham.jpg" alt=""></label>
+          <label for="lnb_chk" class="open_lnb"><div class="three col">
+            <div class="hamburger" id="hamburger-5">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div></div></label>
         </div>
         <ul class="lnb_ham_menu">
           <div class="lnb_menu_top">
@@ -105,9 +117,18 @@
       <!--arrow-->
     </div>
   </div>
+  <div class="quick_btn">
+    <ul class="quick">
+      <li class="on">new</li>
+      <li>ACCESSORIES</li>
+      <li>SALE</li>
+      <li>PERSONAL COLOR</li>
+    </ul>
+  </div>
+  <!--quick_btn-->
 
   <div class="wrap">
-    <div class="new category">
+    <div class="new category quick_tab">
       <h1>NEW</h1>
       <div class="category_image">
         <img src="./images/new_fox.png" alt="new_fox" />
@@ -182,7 +203,8 @@
       </div>
     </div>
     <!--new-->
-    <div class="accessories category">
+
+    <div class="accessories category quick_tab">
       <h1>ACCESSORIES</h1>
       <div class="product">
         <a href="#">
@@ -255,7 +277,8 @@
       </div>
     </div>
     <!--accessories-->
-    <div class="sale category">
+
+    <div class="sale category quick_tab">
       <h1>SALE</h1>
       <div class="product">
         <a href="#">
@@ -344,7 +367,7 @@
   </div>
   <!--wrap-->
 
-  <div class="personal_color_ex">
+  <div class="personal_color_ex quick_tab">
     <div class="wrap">
       <div class="personal_color">
         <h1>PERSONAL COLOR</h1>
@@ -671,7 +694,7 @@
   <!--personal_color_ex-->
 
   <div class="top_btn">
-    <a href="#"><img src="./images/top_btn.png" alt="top_btn" /></a>
+    <a href="#header"><img src="./images/top_btn.png" alt="top_btn" /></a>
   </div>
   <!--top_btn-->
   <footer class="footer_ex">
@@ -788,8 +811,13 @@
     <!--wrap-->
   </footer>
   <!--footer_ex-->
+
+
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+  <!-- slick start -->
   <script>
     $(document).ready(function () {
       $('.visual_main').slick({
@@ -798,13 +826,87 @@
         arrows: true,
         prevArrow: $('.prevArrow'),
         nextArrow: $('.nextArrow'),
-        //slidesToShow : 2,
+
       });
     });
   </script>
-</body>
+  <!-- slick end -->
 
-</html>
+  <!-- quick_btn start -->
+  <script>
+    $(function () {
+      const btn = $('.quick_btn .quick li')
+      const category = $('.quick_tab')
+
+      $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2)
+
+      $(window).scroll(function () {
+
+        let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick').height() / 2)
+        $('.quick').stop().animate({
+          top: point
+        }, 500)
+
+        category.each(function () {
+          let point = $(window).scrollTop()
+          let index = $(this).index()
+
+          if (point >= $(this).offset().top) {
+            btn.removeClass('on')
+            btn.eq(index).addClass('on')
+          }
+        })
+      })
+
+      btn.click(function () {
+        let index = $(this).index()
+        let top = category.eq(index).offset().top
+
+        $('html,body').stop().animate({
+          scrollTop: top
+        }, 1000)
+      })
+    })
+  </script>
+  <!-- quick_btn end -->
+
+  <!-- header fixed start -->
+  <script>
+    $(function () {
+      $(window).scroll(function () {
+        if ($(window).scrollTop()) {
+          $('.header_ex').addClass('fixed')
+        } else {
+          $('.header_ex').removeClass('fixed')
+        }
+      })
+    })
+  </script>
+  <!-- header fixed end -->
+
+  <!-- top_btn start -->
+  <script>
+    $(function () {
+          $('.top_btn').click(function (e) {
+        e.preventDefault()
+        $('html, body').stop().animate({
+          scrollTop: 0
+        }, 1000)
+      })
+    })
+  </script>
+  <!-- top_btn end -->
+
+  <!--ham_btn start-->
+  <script>
+    $(document).ready(function () {
+      $(".hamburger").click(function () {
+        $(this).toggleClass("is-active");
+      });
+    });
+  </script>
+  <!--ham_btn end-->
+
 </body>
 
 </html>
