@@ -50,12 +50,15 @@
       <div class="lnb">
         <input type="checkbox" id="lnb_chk" checked />
         <div class="label">
-          <label for="lnb_chk" class="open_lnb"><div class="three col">
-            <div class="hamburger" id="hamburger-5">
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
-            </div></div></label>
+          <label for="lnb_chk" class="open_lnb">
+            <div class="three col">
+              <div class="hamburger" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+            </div>
+          </label>
         </div>
         <ul class="lnb_ham_menu">
           <div class="lnb_menu_top">
@@ -870,24 +873,10 @@
   </script>
   <!-- quick_btn end -->
 
-  <!-- header fixed start -->
-  <script>
-    $(function () {
-      $(window).scroll(function () {
-        if ($(window).scrollTop()) {
-          $('.header_ex').addClass('fixed')
-        } else {
-          $('.header_ex').removeClass('fixed')
-        }
-      })
-    })
-  </script>
-  <!-- header fixed end -->
-
   <!-- top_btn start -->
   <script>
     $(function () {
-          $('.top_btn').click(function (e) {
+      $('.top_btn').click(function (e) {
         e.preventDefault()
         $('html, body').stop().animate({
           scrollTop: 0
