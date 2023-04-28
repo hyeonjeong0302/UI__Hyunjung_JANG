@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Dokdo&display=swap");
 
 /* font-family: 'Dokdo', cursive; */
+
 * {
   margin: 0;
   padding: 0;
-}
+
+  }
 
 li {
   list-style: none;
@@ -20,6 +22,8 @@ a {
   margin: 0 auto;
   position: relative;
 }
+
+
 
 /* header */
 .header_ex {
@@ -701,9 +705,9 @@ a {
   padding-top: 18px;
 }
 
-.quick_btn .quick li.on {
+/* .quick_btn .quick li.on{
   background-color: rgb(156, 133, 91);
-}
+} */
 
 
 /* mediaquery */

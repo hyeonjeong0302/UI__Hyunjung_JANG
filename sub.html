@@ -1052,20 +1052,23 @@
   <!--footer_ex-->
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <!-- slick start -->
-  <script>
-    $(document).ready(function () {
-      $(".visual_main").slick({
-        autoplay: true,
-        dots: true,
-        arrows: false,
-        prevArrow: $(".prevArrow"),
-        nextArrow: $(".nextArrow"),
-      });
-    });
-  </script>
-  <!-- slick end -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<!-- gnb_animation start -->
+
+
+<script>
+  setInterval(function () {
+    $('.gnb_personal a').animate({
+      'opacity': 0
+    }, 300, function () {
+      $('.gnb_personal a').animate({
+        'opacity': 0.5
+      }, 300);
+    });
+  }, 1500);
+</script>
+<!-- gnb_animation end -->
   <!-- top_btn start -->
   <script>
     $(function () {

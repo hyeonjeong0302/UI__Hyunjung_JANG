@@ -13,6 +13,7 @@
   <script src="./js/jquery-3.6.4.min.js"></script>
   <script src="./js/jquery.scrollTo.min.js"></script>
   <script src="./js/jQuery_fixed.js"></script>
+  <script src="./js/jquery.mousewheel.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
@@ -95,34 +96,34 @@
     <!--wrap-->
   </header>
   <!--header_ex-->
-  <div>
-    <div class="visual_main_ex">
-      <div class="visual_main">
-        <div>
-          <a href="#"><img src="./images/visual_pc01_634.jpg" alt="visual01"></a>
-          <a href="#"><img src="./images/visual_pc02_634.jpg" alt="visual2"></a>
-        </div>
-        <div>
-          <a href="#"><img src="./images/visual_pc02_634.jpg" alt="visual2"></a>
-          <a href="#"><img src="./images/visual_pc03_634.jpg" alt="visual3"></a>
-        </div>
-        <div><a href="#"><img src="./images/visual_pc03_634.jpg" alt="visual3"></a>
-          <a href="#"><img src="./images/visual_pc04_634.jpg" alt="visual4"></a></div>
-        <div><a href="#"><img src="./images/visual_pc04_634.jpg" alt="visual4"></a>
-          <a href="#"><img src="./images/visual_pc05_634.jpg" alt="visual5"></a></div>
-        <div><a href="#"><img src="./images/visual_pc05_634.jpg" alt="visual4"></a>
-          <a href="#"><img src="./images/visual_pc01_634.jpg" alt="visual5"></a></div>
+
+  <div class="visual_main_ex">
+    <div class="visual_main">
+      <div>
+        <a href="#"><img src="./images/visual_pc01_634.jpg" alt="visual01"></a>
+        <a href="#"><img src="./images/visual_pc02_634.jpg" alt="visual2"></a>
       </div>
-      <!--visual_main-->
-      <div class="arrow">
-        <span class="prevArrow"><i class="fas fa-chevron-left"></i></span>
-        <span class="nextArrow"><i class="fas fa-chevron-right"></i></span></div>
-      <!--arrow-->
+      <div>
+        <a href="#"><img src="./images/visual_pc02_634.jpg" alt="visual2"></a>
+        <a href="#"><img src="./images/visual_pc03_634.jpg" alt="visual3"></a>
+      </div>
+      <div><a href="#"><img src="./images/visual_pc03_634.jpg" alt="visual3"></a>
+        <a href="#"><img src="./images/visual_pc04_634.jpg" alt="visual4"></a></div>
+      <div><a href="#"><img src="./images/visual_pc04_634.jpg" alt="visual4"></a>
+        <a href="#"><img src="./images/visual_pc05_634.jpg" alt="visual5"></a></div>
+      <div><a href="#"><img src="./images/visual_pc05_634.jpg" alt="visual4"></a>
+        <a href="#"><img src="./images/visual_pc01_634.jpg" alt="visual5"></a></div>
     </div>
+    <!--visual_main-->
+    <div class="arrow">
+      <span class="prevArrow"><i class="fas fa-chevron-left"></i></span>
+      <span class="nextArrow"><i class="fas fa-chevron-right"></i></span></div>
+    <!--arrow-->
   </div>
+
   <div class="quick_btn">
     <ul class="quick">
-      <li class="on"><a href="#category01">NEW</a></li>
+      <li><a href="#category01">NEW</a></li>
       <li><a href="#category02">ACCESSORIES</a></li>
       <li><a href="#category03">SALE</a></li>
       <li><a href="#category04">PERSONAL COLOR</a></li>
@@ -819,6 +820,19 @@
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
+  <!-- gnb_animation start -->
+  <script>
+    setInterval(function () {
+      $('.gnb_personal a').animate({
+        'opacity': 0
+      }, 300, function () {
+        $('.gnb_personal a').animate({
+          'opacity': 0.5
+        }, 300);
+      });
+    }, 1500);
+  </script>
+  <!-- gnb_animation end -->
 
   <!-- slick start -->
   <script>
@@ -835,41 +849,7 @@
   <!-- slick end -->
 
   <!-- quick_btn start -->
-
-
   <script>
-    $(function () {
-      const btn = $('.quick_btn .quick li')
-      const category = $('.quick_tab')
-
-      $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2)
-
-      $(window).scroll(function () {
-
-        let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick').height() / 2)
-        $('.quick').stop().animate({
-          top: point
-        }, 500)
-
-        category.each(function () {
-          let point = $(window).scrollTop()
-          let index = $(this).index()
-
-          if (point >= $(this).offset().top) {
-            btn.removeClass('on')
-            btn.eq(index).addClass('on')
-          }
-        })
-      }) //window_scroll_event
-
-      $('.quick li a').click(function () {
-        $(window).scrollTo(this.hash || 0, 1000)
-      }) //btn_click_event
-
-    }) //jquery_function
-  </script>
-
-  <!-- <script>
     $(function () {
       const btn = $('.quick_btn .quick li')
       const category = $('.quick_tab')
@@ -903,7 +883,7 @@
         }, 1000)
       })
     })
-  </script> -->
+  </script>
   <!-- quick_btn end -->
 
   <!-- top_btn start -->
