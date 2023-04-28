@@ -122,16 +122,16 @@
   </div>
   <div class="quick_btn">
     <ul class="quick">
-      <li class="on">new</li>
-      <li>ACCESSORIES</li>
-      <li>SALE</li>
-      <li>PERSONAL COLOR</li>
+      <li class="on"><a href="#category01">NEW</a></li>
+      <li><a href="#category02">ACCESSORIES</a></li>
+      <li><a href="#category03">SALE</a></li>
+      <li><a href="#category04">PERSONAL COLOR</a></li>
     </ul>
   </div>
   <!--quick_btn-->
 
   <div class="wrap">
-    <div class="new category quick_tab">
+    <div class="new category quick_tab" id="category01">
       <h1>NEW</h1>
       <div class="category_image">
         <img src="./images/new_fox.png" alt="new_fox" />
@@ -207,7 +207,7 @@
     </div>
     <!--new-->
 
-    <div class="accessories category quick_tab">
+    <div class="accessories category quick_tab" id="category02">
       <h1>ACCESSORIES</h1>
       <div class="product">
         <a href="#">
@@ -281,7 +281,7 @@
     </div>
     <!--accessories-->
 
-    <div class="sale category quick_tab">
+    <div class="sale category quick_tab" id="category03">
       <h1>SALE</h1>
       <div class="product">
         <a href="#">
@@ -370,7 +370,7 @@
   </div>
   <!--wrap-->
 
-  <div class="personal_color_ex quick_tab">
+  <div class="personal_color_ex quick_tab" id="category04">
     <div class="wrap">
       <div class="personal_color">
         <h1>PERSONAL COLOR</h1>
@@ -829,14 +829,47 @@
         arrows: true,
         prevArrow: $('.prevArrow'),
         nextArrow: $('.nextArrow'),
-
       });
     });
   </script>
   <!-- slick end -->
 
   <!-- quick_btn start -->
+
+
   <script>
+    $(function () {
+      const btn = $('.quick_btn .quick li')
+      const category = $('.quick_tab')
+
+      $('.quick').css('top', $(window).height() / 2 - $('.quick').height() / 2)
+
+      $(window).scroll(function () {
+
+        let point = $(this).scrollTop() + ($(window).height() / 2 - $('.quick').height() / 2)
+        $('.quick').stop().animate({
+          top: point
+        }, 500)
+
+        category.each(function () {
+          let point = $(window).scrollTop()
+          let index = $(this).index()
+
+          if (point >= $(this).offset().top) {
+            btn.removeClass('on')
+            btn.eq(index).addClass('on')
+          }
+        })
+      }) //window_scroll_event
+
+      $('.quick li a').click(function () {
+        $(window).scrollTo(this.hash || 0, 1000)
+      }) //btn_click_event
+
+    }) //jquery_function
+  </script>
+
+  <!-- <script>
     $(function () {
       const btn = $('.quick_btn .quick li')
       const category = $('.quick_tab')
@@ -870,7 +903,7 @@
         }, 1000)
       })
     })
-  </script>
+  </script> -->
   <!-- quick_btn end -->
 
   <!-- top_btn start -->
