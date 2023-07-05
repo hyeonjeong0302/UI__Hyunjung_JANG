@@ -29,8 +29,13 @@ a {
 .header_ex {
   height: 60px;
   line-height: 60px;
-  overflow: hidden;
+  width: 100%;
+  /* overflow: hidden; */
   border-bottom: 1px solid #e6e6e6;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;background-color: #fff;
+  z-index: 999;
 }
 
 .header_ex .wrap {
@@ -58,7 +63,7 @@ a {
 
 .header_ex .wrap .gnb ul .gnb_personal {
   background-color: rgb(150, 199, 176);
-  border-radius: 0 10px 0 0;
+  border-radius: 0 10px 0 0;height: 60px;
 }
 
 .header_ex .gnb ul li a {
@@ -98,7 +103,8 @@ a {
 
 .header_ex .header_right .search_gnb input {
   width: 0;
-  transition: all 0.5s;
+  opacity: 0;
+  transition:0.5s;
 }
 
 .header_ex .header_right .search_gnb input::placeholder {
@@ -109,10 +115,12 @@ a {
 .header_ex .header_right .search_gnb:hover input {
   display: block;
   position: absolute;
-  right: 50px;
-  top: 0px;
+  z-index: 100;
+  right: 0;
+  top: 60px;
   height: 60px;
   width: 330px;
+  opacity: 100;
   background-color: rgb(150, 199, 176);
   border-radius: 10px;
   border-color: rgb(156, 133, 91);
@@ -134,6 +142,7 @@ a {
   position: relative;
   width: 1269px;
   margin: 0 auto;
+  margin-top: 60px;
 }
 
 .visual_main_ex .arrow .prevArrow {
